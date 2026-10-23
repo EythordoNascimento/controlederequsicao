@@ -1,0 +1,56 @@
+const PRODUTOS = [
+  "ALMÔNDEGA BOVINA",
+  "APARAS DE FRANGO",
+  "ASA DE FRANGO",
+  "BACALHAU",
+  "BACON MANTAS",
+  "BATATA NOISETTES CONGELADA",
+  "BATATA PALITO 9MM CONGELADA",
+  "BIFE DE COXÃO MOLE",
+  "BRÓCOLIS CONGELADO",
+  "BUCHO BOVINO",
+  "CALABRESA",
+  "CAMARÃO 41/50",
+  "CAMARÃO 61/70",
+  "CARNE DE SOL",
+  "CARNE MOÍDA",
+  "RABADA",
+  "CHARQUE CUBO PEQUENO",
+  "CHARQUE DESFIADA",
+  "CHARQUE CUBO GRANDE",
+  "COXA E SOBRECOXA",
+  "CUBO DE FRANGO PARA SOPA",
+  "CUPIM CONGELADO",
+  "COSTELA SUÍNA",
+  "ERVILHA CONGELADA",
+  "FÍGADO",
+  "FILÉ DE PANGA",
+  "FILÉ DE PEITO DE FRANGO",
+  "CUBO DE FRANGO PARA STROGONOFF",
+  "FILÉ DE TILÁPIA",
+  "FILÉ DE SALMÃO",
+  "ISCA PEITO DE FRANGO",
+  "KANI KAMA",
+  "MAMINHA",
+  "MEXILHÃO",
+  "PALETA SOPA",
+  "PALETA GUISADO",
+  "CORVINA",
+  "PESCADA AMARELA",
+  "FILE MIGNON",
+  "PICANHA SUÍNA",
+  "INGREDIENTES PARA FEIJOADA",
+  "SALSICHA HOT DOG"
+];
+
+// Destinatários do WhatsApp.
+// Preencha "fone" com DDI + DDD + número, só dígitos (ex.: "5581999999999").
+// Se deixar vazio, o WhatsApp abre para você escolher o contato/grupo.
+const DESTINATARIOS = [
+  { id: "gerente-loja",        nome: "Gerente Loja",        fone: "5581996171798" },
+  { id: "gerente-operacional", nome: "Gerente Operacional", fone: "" },
+  { id: "compras",             nome: "Compras",             fone: "" },
+  { id: "estoque",             nome: "Estoque",             fone: "" },
+  { id: "grupo",               nome: "Grupo Frigorificados", fone: "" },
+  { id: "todos",               nome: "Todos",               fone: "" }
+];

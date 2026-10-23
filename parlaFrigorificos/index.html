@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<title>Parla Deli – Controle de Requisições</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topo">
+    <div class="logo">PD</div>
+    <div class="marca">
+      <strong>Parla Deli</strong>
+      <small>Controle de Requisições</small>
+    </div>
+    <span class="tag">COZINHA</span>
+  </header>
+
+  <nav class="abas">
+    <button type="button" class="aba ativa" data-tela="tela-form">Nova requisição</button>
+    <button type="button" class="aba" data-tela="tela-hist">Histórico</button>
+    <button type="button" class="aba" data-tela="tela-dash">Dashboard</button>
+  </nav>
+
+  <!-- NOVA REQUISIÇÃO -->
+  <section id="tela-form">
+    <div class="card">
+      <h2>Nova requisição</h2>
+      <p class="sub">Preencha os dados e adicione os produtos solicitados.</p>
+      <div class="duas">
+        <div><label for="data">Data da requisição</label><input type="date" id="data"></div>
+        <div><label for="responsavel">Responsável</label><input type="text" id="responsavel" placeholder="Nome do responsável" autocomplete="name"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="linha-titulo">
+        <div>
+          <h2>Produtos</h2>
+          <p class="sub">Adicione os produtos e suas quantidades.</p>
+        </div>
+        <span class="pill" id="contador">0 itens</span>
+      </div>
+      <div id="lista-produtos"></div>
+      <button type="button" class="add" id="btn-add">+ Adicionar produto</button>
+    </div>
+
+    <div class="resumo">
+      <div class="tile"><small>Produtos adicionados</small><b id="r-qtd">0</b></div>
+      <div class="tile"><small>Quantidade total</small><b id="r-total">0 <span>kg</span></b></div>
+    </div>
+
+    <div class="card">
+      <h2>Observações</h2>
+      <label for="obs">Informações adicionais (opcional)</label>
+      <textarea id="obs" rows="3" placeholder="Digite alguma observação..."></textarea>
+    </div>
+
+    <button type="button" class="btn escuro" id="btn-gerar">Salvar requisição e gerar PDF</button>
+    <p class="nota" id="erro" role="alert">Confira os produtos e as quantidades antes de salvar.</p>
+  </section>
+
+  <!-- REQUISIÇÃO GERADA -->
+  <section id="tela-ok" hidden>
+    <div class="card sucesso">
+      <h2>✅ Requisição gerada com sucesso</h2>
+      <p class="num" id="ok-num"></p>
+    </div>
+    <div class="card">
+      <h2>Destinatário</h2>
+      <div id="destinatarios"></div>
+    </div>
+    <button type="button" class="btn whats" id="btn-whats">Compartilhar no WhatsApp</button>
+    <div class="duas">
+      <button type="button" class="btn claro" id="btn-baixar">Baixar PDF</button>
+      <button type="button" class="btn claro" id="btn-abrir">Abrir PDF</button>
+    </div>
+    <button type="button" class="btn escuro" id="btn-nova">Nova requisição</button>
+  </section>
+
+  <!-- HISTÓRICO -->
+  <section id="tela-hist" hidden>
+    <div class="card">
+      <h2>Histórico</h2>
+      <p class="sub">Requisições geradas neste aparelho.</p>
+      <div id="hist-lista"></div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="tela-dash" hidden>
+    <div class="resumo" id="dash-tiles"></div>
+    <div class="card">
+      <h2>Produtos mais requisitados</h2>
+      <p class="sub">Por quantidade total (kg).</p>
+      <div id="dash-top"></div>
+    </div>
+    <div class="card">
+      <h2>Últimos 7 dias</h2>
+      <p class="sub">Quantidade requisitada por dia (kg).</p>
+      <div id="dash-dias"></div>
+    </div>
+  </section>
+
+  <footer class="rodape">Controle Digital de Requisições de Frigorificados</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="produtos.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
